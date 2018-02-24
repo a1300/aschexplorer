@@ -50,13 +50,13 @@ export default {
       }
 
       if (this.$route.params && this.$route.params.hasOwnProperty('id')) {
-        console.log('blockDetail with id')
+        console.log('blockDetail with id ' + this.$route.params.id)
         this.isLoading = true
-        let requestUrl = ('http://mainnet.asch.io/api/blocks?limit=2?id=' + this.$route.params.id)
+        let requestUrl = ('http://mainnet.asch.io/api/blocks/get?id=' + this.$route.params.id)
         axios.get(requestUrl)
           .then((response) => {
             if (response.data.success === true) {
-              this.block = response.data.blocks[0]
+              this.block = response.data.block
             }
           })
           .catch((error) => {
