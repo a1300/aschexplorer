@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Block from '@/components/Block'
+import BlockDetail from '@/components/BlockDetail'
+
 import Transaction from '@/components/Transaction'
 import Address from '@/components/Address'
 
@@ -12,6 +15,16 @@ export default new Router({
       path: '/block',
       name: 'block',
       component: Block
+    },
+    {
+      path: '/block/height/:id',
+      name: 'blockHeight',
+      component: BlockDetail
+    },
+    {
+      path: '/block/hash/:hash',
+      name: 'blockHash',
+      component: BlockDetail
     },
     {
       path: '/tx',

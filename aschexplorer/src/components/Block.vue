@@ -1,11 +1,47 @@
 <template>
   <div>
     <p>Blocks</p>
+    <div v-for="block in blocks" :key="block.id" class="block">
+      <p> {{block.id}} </p>
+      <p> Number of transactions: {{block.numberOfTransactions}} </p>
+      <p> Delegate: {{block.generatorId}}</p>
+      <p>height:</p> <router-link :to="{ name: 'blockHeight', params: { id: block.height } }"> {{block.height}} </router-link>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
+export default {
+  data () {
+    return {
+      blocks: [],
+      loading: false
+    }
+  },
+  created () {
+    this.loading = true
+    axios.get('http://mainnet.asch.io/api/blocks')
+      .then((response) => {
+        this.loading = false
+        if (response.data.success === true) {
+          this.blocks = response.data.blocks
+          console.log(this.blocks)
+        }
+      })
+      .catch((error) => {
+        if (error) {
+          this.loading = false
+        }
+      })
+  }
+}
 </script>
 
 <style scoped>
+.block {
+  border: black solid 1px;
+  margin: 2px;
+}
 </style>
