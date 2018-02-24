@@ -5,7 +5,7 @@
       <p> {{block.id}} </p>
       <p> Number of transactions: {{block.numberOfTransactions}} </p>
       <p> Delegate: {{block.generatorId}}</p>
-      <p>height:</p> <router-link :to="{ name: 'blockHeight', params: { id: block.height } }"> {{block.height}} </router-link>
+      <p>height:</p> <router-link :to="{ name: 'blockHeight', params: { height: block.height } }"> {{block.height}} </router-link>
     </div>
   </div>
 </template>

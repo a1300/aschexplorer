@@ -17,14 +17,20 @@ export default new Router({
       component: Block
     },
     {
-      path: '/block/height/:id',
+      path: '/block/height/:height',
       name: 'blockHeight',
-      component: BlockDetail
+      component: BlockDetail,
+      beforeRouteUpdate (to, from, next) {
+        console.log('beforeRouteUpdate blockHeight')
+      }
     },
     {
-      path: '/block/hash/:hash',
-      name: 'blockHash',
-      component: BlockDetail
+      path: '/block/id/:id',
+      name: 'blockId',
+      component: BlockDetail,
+      beforeRouteUpdate (to, from, next) {
+        console.log('beforeRouteUpdate blockId')
+      }
     },
     {
       path: '/tx',
