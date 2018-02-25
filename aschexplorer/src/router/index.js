@@ -5,7 +5,9 @@ import Block from '@/components/Block'
 import BlockDetail from '@/components/BlockDetail'
 
 import Transaction from '@/components/Transaction'
+
 import Address from '@/components/Address'
+import AddressDetail from '@/components/AddressDetail'
 
 Vue.use(Router)
 
@@ -32,9 +34,14 @@ export default new Router({
       component: Transaction
     },
     {
+      path: '/address',
+      name: 'addressList',
+      component: Address
+    },
+    {
       path: '/address/:address',
       name: 'address',
-      component: Address
+      component: AddressDetail
     }
   ]
 })

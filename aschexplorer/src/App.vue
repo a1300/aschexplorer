@@ -2,7 +2,7 @@
   <div id="app">
     <router-link class="router-link-normal" to="/block">Blocks</router-link>
     <router-link to="/tx">Transactions</router-link>
-    <router-link to="/address">Address</router-link>
+    <router-link to="/address">Addresses</router-link>
     <router-view/>
   </div>
 </template>
