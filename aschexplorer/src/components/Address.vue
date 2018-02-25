@@ -1,5 +1,7 @@
 <template>
-  <p>Address list</p>
+  <div>
+    <loading-indicator></loading-indicator>
+  </div>
 </template>
 
 <script>

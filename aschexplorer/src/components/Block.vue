@@ -1,10 +1,7 @@
 <template>
   <div>
     <div v-if="loading === true">
-      <atom-spinner :size="100"
-          :animation-duration="1200"
-          :color="'black'" class="atom" />
-      <p>Loading...</p>
+      <loading-indicator></loading-indicator>
     </div>
    <div v-else>
       <div v-for="block in blocks" :key="block.id" class="block">
@@ -51,14 +48,6 @@ export default {
 </script>
 
 <style scoped>
-
-.atom {
-  color: black;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .block {
   border: black solid 1px;
   margin: 2px;

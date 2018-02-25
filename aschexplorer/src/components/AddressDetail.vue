@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>Address</p>
+    <loading-indicator v-if="loading"></loading-indicator>
     <div v-if="address">
       <p>{{address.address}}</p>
       <p>Balance {{address.balance}} XAS</p>
@@ -58,8 +59,10 @@ export default {
           .then((response) => {
             if (response.data.success === true) {
               this.address = response.data.account
+              this.loading = false
               return this.address.publicKey
             }
+            this.loading = false
           })
           .then((publicKey) => {
             if (typeof publicKey === 'string') {
@@ -87,6 +90,7 @@ export default {
                   console.log(response.data)
                   this.votedForMe = response.data.accounts
                 }
+                this.loading = false
               })
           })
           .catch((error) => {
