@@ -10,8 +10,12 @@
       <div v-for="block in blocks" :key="block.id" class="block">
         <p> {{block.id}} </p>
         <p> Number of transactions: {{block.numberOfTransactions}} </p>
-        <p> Delegate: {{block.generatorId}}</p>
-        <p>height:</p> <router-link :to="{ name: 'blockHeight', params: { height: block.height } }"> {{block.height}} </router-link>
+       <div>
+         <router-link :to="{ name: 'address', params: { address: block.generatorId } }"> delegate: {{ block. generatorId }} </router-link>
+       </div>
+       <div>
+        <router-link :to="{ name: 'blockHeight', params: { height: block.height } }"> height: {{block.height}} </router-link>
+       </div>
       </div>
     </div>
   </div>
