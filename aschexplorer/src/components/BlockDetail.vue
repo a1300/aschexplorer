@@ -7,6 +7,8 @@
       <span v-if="block">
         <p>previous Block:</p>
         <router-link :to="{ name: 'blockId', params: { id: block.previousBlock} }"> {{block.previousBlock}} </router-link>
+
+        <button v-on:click="loadTransactions(block.id)">Load Transactions</button>
       </span>
     </div>
   </div>
@@ -20,7 +22,8 @@ export default {
     return {
       hash: null,
       block: null,
-      isLoading: false
+      isLoading: false,
+      transactions: null
     }
   },
   created () {
@@ -66,6 +69,9 @@ export default {
             }
           })
       }
+    },
+    loadTransactions: function (blockId) {
+      console.log(blockId)
     }
   }
 }

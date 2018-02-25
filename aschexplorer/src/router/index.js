@@ -32,7 +32,7 @@ export default new Router({
       component: Transaction
     },
     {
-      path: '/address',
+      path: '/address/:address',
       name: 'address',
       component: Address
     }
