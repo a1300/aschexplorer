@@ -9,6 +9,7 @@ import { AtomSpinner } from 'epic-spinners'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import VueCollapse from 'vue2-collapse'
 import { headroom } from 'vue-headroom'
+import i18n from '@/localization/index'
 
 Vue.config.productionTip = false
 
@@ -22,5 +23,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  i18n
 })

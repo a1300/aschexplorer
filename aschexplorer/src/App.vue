@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <headroom>
-      <router-link to='/'>Home</router-link>
-      <router-link to="/block">Blocks</router-link>
-      <router-link to="/tx">Transactions</router-link>
-      <router-link to="/address">Addresses</router-link>
+      <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <router-link to='/'>{{ $t("HOME") }}</router-link>
+        <router-link to="/block">{{ $t("BLOCK") }}</router-link>
+        <router-link to="/tx">Transactions</router-link>
+        <router-link to="/address">Addresses</router-link>
+      </header>
     </headroom>
     <router-view/>
   </div>
