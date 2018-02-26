@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <router-link to='/'>Home</router-link>
-    <router-link to="/block">Blocks</router-link>
-    <router-link to="/tx">Transactions</router-link>
-    <router-link to="/address">Addresses</router-link>
+    <headroom>
+      <router-link to='/'>Home</router-link>
+      <router-link to="/block">Blocks</router-link>
+      <router-link to="/tx">Transactions</router-link>
+      <router-link to="/address">Addresses</router-link>
+    </headroom>
     <router-view/>
   </div>
 </template>

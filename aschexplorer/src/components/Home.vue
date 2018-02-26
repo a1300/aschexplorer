@@ -49,6 +49,8 @@ export default {
       if (typeof Number.parseInt(query) === 'number' && Number.parseInt(query) < this.currentBlockHeight) {
         router.push({ name: 'blockHeight', params: { height: Number.parseInt(query) } })
       }
+      // check if is a transaction or a adress
+      this.loading = false
     }
   }
 }

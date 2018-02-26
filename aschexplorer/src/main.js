@@ -8,12 +8,14 @@ import router from './router'
 import { AtomSpinner } from 'epic-spinners'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import VueCollapse from 'vue2-collapse'
+import { headroom } from 'vue-headroom'
 
 Vue.config.productionTip = false
 
 Vue.component('atom-spinner', AtomSpinner)
 Vue.use(VueCollapse)
 Vue.component('loading-indicator', LoadingIndicator)
+Vue.component('headroom', headroom)
 
 /* eslint-disable no-new */
 new Vue({

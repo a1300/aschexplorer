@@ -3,7 +3,7 @@
     <div v-if="loading === true">
       <loading-indicator></loading-indicator>
     </div>
-   <div v-else>
+   <div v-else class="blockList">
       <div v-for="block in blocks" :key="block.id" class="block">
         <p> {{block.id}} </p>
         <p> Number of transactions: {{block.numberOfTransactions}} </p>
@@ -48,6 +48,11 @@ export default {
 </script>
 
 <style scoped>
+.blockList {
+  max-height: 600px;
+  overflow: auto;
+}
+
 .block {
   border: black solid 1px;
   margin: 2px;
