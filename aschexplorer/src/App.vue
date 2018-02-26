@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-link class="router-link-normal" to="/block">Blocks</router-link>
+    <router-link to='/'>Home</router-link>
+    <router-link to="/block">Blocks</router-link>
     <router-link to="/tx">Transactions</router-link>
     <router-link to="/address">Addresses</router-link>
     <router-view/>
@@ -14,11 +15,6 @@ export default {
 </script>
 
 <style>
-
-.router-link-normal {
-  color:black;
-  text-decoration-style:none;
-}
 
 .router-link-active {
   font-weight: bold;

@@ -9,10 +9,17 @@ import Transaction from '@/components/Transaction'
 import Address from '@/components/Address'
 import AddressDetail from '@/components/AddressDetail'
 
+import Home from '@/components/Home'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'root',
+      component: Home
+    },
     {
       path: '/block',
       name: 'block',
