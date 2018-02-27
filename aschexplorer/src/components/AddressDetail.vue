@@ -4,7 +4,7 @@
     <loading-indicator v-if="loading"></loading-indicator>
     <div v-if="address">
       <p>{{address.address}}</p>
-      <p>Balance {{address.balance}} XAS</p>
+      <p>Balance {{ address.unconfirmedBalance | xas }} XAS</p>
       <p>Public Key: {{address.publicKey}}</p>
       <div v-if="delegate" class="delegate">
         <p>forged: {{delegate.forged}}</p>
@@ -19,7 +19,7 @@
           <div class="accordionContent" v-collapse-content>
               <div v-if="votedForMe && votedForMe.length > 0" v-for="vote in votedForMe" :key="vote.address">
                 <router-link :to="{ name: 'address', params: { address: vote.address } }">{{vote.address}}</router-link>
-                <p>balance: {{vote.balance}}</p>
+                <p>balance: {{ vote.balance | xas }} XAS</p>
               </div>
               <div v-else>
                 <p>Nobody voted for {{delegate.address}}</p>

@@ -18,6 +18,15 @@ Vue.use(VueCollapse)
 Vue.component('loading-indicator', LoadingIndicator)
 Vue.component('headroom', headroom)
 
+/* filters */
+Vue.filter('xas', function (number) {
+  if (typeof number !== 'number') {
+    return number
+  }
+  let result = number / 80000000
+  return result.toFixed(2)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

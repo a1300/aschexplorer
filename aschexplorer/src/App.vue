@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <router-link to='/'>{{ $t("HOME") }}</router-link>
         <router-link to="/block">{{ $t("BLOCK") }}</router-link>
-        <router-link to="/tx">Transactions</router-link>
-        <router-link to="/address">Addresses</router-link>
+        <router-link to="/tx">{{ $t("TRANSACTION") }}</router-link>
+        <router-link to="/address">{{ $t("ADDRESSES") }}</router-link>
         <div>
           <button @click="setNewLang('de')">de</button>
           <button @click="setNewLang('en')">en</button>
