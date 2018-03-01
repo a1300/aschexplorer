@@ -7,6 +7,7 @@
         <router-link to="/block">{{ $t("BLOCK") }}</router-link>
         <router-link to="/tx">{{ $t("TRANSACTION") }}</router-link>
         <router-link to="/address">{{ $t("ADDRESSES") }}</router-link>
+        <router-link to="/delegate">{{ $t("DELEGATE") }}</router-link>
         <div>
           <button @click="setNewLang('de')">de</button>
           <button @click="setNewLang('en')">en</button>
@@ -24,6 +25,15 @@ export default {
     setNewLang (newLang) {
       if (typeof newLang === 'string') {
         this.$i18n.locale = newLang
+      }
+    }
+  },
+  created: function () {
+    let lang = navigator.language || navigator.userLanguage
+    if (typeof lang === 'string' && lang.length >= 2) {
+      let firstTwo = lang.substr(0, 2)
+      if (this.$i18n && firstTwo in this.$i18n.messages) {
+        this.$i18n.locale = firstTwo
       }
     }
   }

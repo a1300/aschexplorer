@@ -3,7 +3,7 @@
     <atom-spinner :size="100"
       :animation-duration="1200"
       :color="'black'" class="atom" />
-    <p>Loading...<p/>
+    <p> {{ $t('LOADING')}} <p/>
   </div>
 </template>
 

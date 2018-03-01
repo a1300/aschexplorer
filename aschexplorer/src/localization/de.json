@@ -2,5 +2,8 @@
   "HOME": "Start",
   "BLOCK": "Blöcke",
   "TRANSACTION": "Transaktionen",
-  "ADDRESSES": "Adressen"
+  "ADDRESSES": "Adressen",
+  "DELEGATE": "Delegate",
+
+  "LOADING": "Laden..."
 }
