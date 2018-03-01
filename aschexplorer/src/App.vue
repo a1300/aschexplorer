@@ -1,25 +1,18 @@
 <template>
   <div id="app">
-    <headroom>
-      <header>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <router-link to='/'>{{ $t("HOME") }}</router-link>
-        <router-link to="/block">{{ $t("BLOCK") }}</router-link>
-        <router-link to="/tx">{{ $t("TRANSACTION") }}</router-link>
-        <router-link to="/address">{{ $t("ADDRESSES") }}</router-link>
-        <router-link to="/delegate">{{ $t("DELEGATE") }}</router-link>
-      </header>
-    </headroom>
+    <HeaderComponent></HeaderComponent>
     <router-view/>
     <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
-import FooterComponent from '@/components/FooterComponent.vue'
+import FooterComponent from '@/components/FooterComponent'
+import HeaderComponent from '@/components/HeaderComponent'
 export default {
   name: 'App',
   components: {
+    'HeaderComponent': HeaderComponent,
     'FooterComponent': FooterComponent
   },
   methods: {

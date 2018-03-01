@@ -19,11 +19,13 @@ export default {
 
 <style scoped>
 footer {
-    position: relative;
+    position: fixed;
+    margin: 0px;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px;
     background-color: orange;
+    overflow-y: scroll;
 }
 </style>
