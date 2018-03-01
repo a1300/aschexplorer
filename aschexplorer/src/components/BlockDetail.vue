@@ -5,6 +5,7 @@
     <div v-if="block">
       <p>id: {{block.id}}</p>
       <p>height: {{block.height}} </p>
+      <p> Timestamp in XAS-Time: {{block.timestamp}} </p>
       <span v-if="block">
         <p>previous Block:</p>
         <router-link :to="{ name: 'blockId', params: { id: block.previousBlock} }"> {{block.previousBlock}}</router-link>

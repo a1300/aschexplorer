@@ -8,19 +8,20 @@
         <router-link to="/tx">{{ $t("TRANSACTION") }}</router-link>
         <router-link to="/address">{{ $t("ADDRESSES") }}</router-link>
         <router-link to="/delegate">{{ $t("DELEGATE") }}</router-link>
-        <div>
-          <button @click="setNewLang('de')">de</button>
-          <button @click="setNewLang('en')">en</button>
-        </div>
       </header>
     </headroom>
     <router-view/>
+    <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
+import FooterComponent from '@/components/FooterComponent.vue'
 export default {
   name: 'App',
+  components: {
+    'FooterComponent': FooterComponent
+  },
   methods: {
     setNewLang (newLang) {
       if (typeof newLang === 'string') {
@@ -55,5 +56,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: block;
 }
 </style>
